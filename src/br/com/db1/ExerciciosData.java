@@ -1,7 +1,11 @@
 package br.com.db1;
 
-import java.text.DateFormat;
+import java.time.Duration;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.Period;
 import java.util.Calendar;
+import java.util.Date;
 
 public class ExerciciosData {
 
@@ -16,12 +20,35 @@ public class ExerciciosData {
 		}
 	}
 
-	public Boolean identificarDiaUtil(Calendar calendario) {
-		if(calendario.get(Calendar.DAY_OF_WEEK) == 6 && calendario.get(Calendar.DAY_OF_WEEK) == 7){
+	public boolean identificarDiasUteis(Calendar calendario) {
+		if((calendario.get(Calendar.DAY_OF_WEEK) == Calendar.SUNDAY) | (calendario.get(Calendar.DAY_OF_WEEK) == Calendar.SATURDAY)) {
 			return false;
 		}
-		else{
+		else {
 			return true;
 		}
+	}
+
+	public Integer retornaIdade(LocalDate dataNascimento, LocalDate dataAtual) {
+		return Period.between(dataNascimento, dataAtual).getYears();
+	}
+
+	public Integer quantidadeDiasEntreDuasDatas(LocalDate primeiraData, LocalDate segundaData) {
+		return Period.between(primeiraData, segundaData).getDays();
+	}
+
+	public Integer quantidadeMesesEntreDuasDatas(LocalDate primeiraData, LocalDate segundaData) {
+		return Period.between(primeiraData, segundaData).getMonths();
+	}
+
+	public Integer quantidadeAnosEntreDuasDatas(LocalDate primeiraData, LocalDate segundaData) {
+		return Period.between(primeiraData, segundaData).getYears();
+	}
+
+	public Double retornaDoubleDeDiferencaEntreDuasHorasDistintas(LocalTime primeiraHora, LocalTime segundaHora) {
+		Double segundos = (double) Duration.between(primeiraHora, segundaHora).getSeconds();
+		Double minutos = segundos/60;
+		Double horas = minutos/60;
+		return horas;
 	}
 }
