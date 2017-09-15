@@ -3,6 +3,7 @@ package br.com.db1.test;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.time.Period;
 import java.util.Calendar;
 
 import org.junit.Assert;
@@ -35,9 +36,10 @@ public class ExerciciosDataTest {
 	
 	@Test
 	public void quantidadeDiasEntreDuasDatasTest() {
-		LocalDate primeiraData = LocalDate.of(2017, 11, 1);
-		LocalDate segundaData = LocalDate.of(2017, 11, 10);
-		Assert.assertTrue(9 == exerciciosData.quantidadeDiasEntreDuasDatas(primeiraData, segundaData));
+		LocalDate primeiraData = LocalDate.of(2017, 11, 10);
+		LocalDate segundaData = LocalDate.of(2016, 10, 1);
+		Assert.assertEquals((Integer)9 , exerciciosData.quantidadeDiasEntreDuasDatas(primeiraData, segundaData));
+		// Assert.assertTrue(9 == exerciciosData.quantidadeDiasEntreDuasDatas(primeiraData, segundaData));
 	}
 	
 	@Test
@@ -49,7 +51,7 @@ public class ExerciciosDataTest {
 	
 	@Test
 	public void quantidadeAnosEntreDuasDatasTest() {
-		LocalDate primeiraData = LocalDate.of(2016, 9, 1);
+		LocalDate primeiraData = LocalDate.of(2017, 9, 1);
 		LocalDate segundaData = LocalDate.of(2017, 11, 10);
 		Assert.assertTrue(1 == exerciciosData.quantidadeAnosEntreDuasDatas(primeiraData, segundaData));
 	}
