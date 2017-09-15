@@ -17,7 +17,7 @@ public class ExerciciosDataTest {
 
 	@Test
 	public void identificarAnoBisextoTest() {
-		Assert.assertTrue(true == exerciciosData.identificarAnoBisexto(1800));
+		Assert.assertTrue(true == exerciciosData.identificarAnoBisexto(2016));
 	}
 
 	@Test
