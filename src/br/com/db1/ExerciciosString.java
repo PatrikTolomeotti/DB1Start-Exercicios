@@ -56,8 +56,7 @@ public class ExerciciosString {
 	}
 
 	public String recebeTextoDevolveInvertido(String texto) {
-		String reverse = new StringBuffer(texto).reverse().toString();
+		String reverse = new StringBuilder(texto).reverse().toString();
 		return reverse;
 	}
 }
-	
