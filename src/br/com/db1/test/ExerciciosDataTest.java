@@ -1,11 +1,8 @@
 package br.com.db1.test;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
+import java.time.LocalDate; 
 import java.time.LocalTime;
-import java.time.Period;
 import java.util.Calendar;
-
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -36,22 +33,21 @@ public class ExerciciosDataTest {
 	
 	@Test
 	public void quantidadeDiasEntreDuasDatasTest() {
-		LocalDate primeiraData = LocalDate.of(2017, 11, 10);
-		LocalDate segundaData = LocalDate.of(2016, 10, 1);
-		Assert.assertEquals((Integer)9 , exerciciosData.quantidadeDiasEntreDuasDatas(primeiraData, segundaData));
-		// Assert.assertTrue(9 == exerciciosData.quantidadeDiasEntreDuasDatas(primeiraData, segundaData));
+		LocalDate primeiraData = LocalDate.of(0, 1, 1);
+		LocalDate segundaData = LocalDate.of(2017, 10, 10);
+		Assert.assertTrue(736977 == exerciciosData.quantidadeDiasEntreDuasDatas(primeiraData, segundaData));
 	}
 	
 	@Test
 	public void quantidadeMesesEntreDuasDatasTest() {
-		LocalDate primeiraData = LocalDate.of(2017, 9, 1);
-		LocalDate segundaData = LocalDate.of(2017, 11, 10);
-		Assert.assertTrue(2 == exerciciosData.quantidadeMesesEntreDuasDatas(primeiraData, segundaData));
+		LocalDate primeiraData = LocalDate.of(2010, 10, 10);
+		LocalDate segundaData = LocalDate.of(2017, 10, 10);
+		Assert.assertTrue(84 == exerciciosData.quantidadeMesesEntreDuasDatas(primeiraData, segundaData));
 	}
 	
 	@Test
 	public void quantidadeAnosEntreDuasDatasTest() {
-		LocalDate primeiraData = LocalDate.of(2017, 9, 1);
+		LocalDate primeiraData = LocalDate.of(2016, 9, 1);
 		LocalDate segundaData = LocalDate.of(2017, 11, 10);
 		Assert.assertTrue(1 == exerciciosData.quantidadeAnosEntreDuasDatas(primeiraData, segundaData));
 	}

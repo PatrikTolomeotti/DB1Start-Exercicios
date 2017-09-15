@@ -1,9 +1,11 @@
 package br.com.db1;
 
 import java.time.Duration;
+
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.Period;
+import java.time.temporal.ChronoUnit;
 import java.util.Calendar;
 
 public class ExerciciosData {
@@ -30,13 +32,11 @@ public class ExerciciosData {
 	}
 
 	public Integer quantidadeDiasEntreDuasDatas(LocalDate primeiraData, LocalDate segundaData) {
-		//refazer
-		return 0;
+		return (int) ChronoUnit.DAYS.between(primeiraData, segundaData);
 	}
 
 	public Integer quantidadeMesesEntreDuasDatas(LocalDate primeiraData, LocalDate segundaData) {
-		//refazer
-		return 0;
+		return (int) ChronoUnit.MONTHS.between(primeiraData, segundaData);
 	}
 
 	public Integer quantidadeAnosEntreDuasDatas(LocalDate primeiraData, LocalDate segundaData) {
